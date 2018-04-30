@@ -1,0 +1,41 @@
+<form>
+  <table>
+    <tr>
+      <td>
+        <label>
+          Employee Name:
+          <input #EmployeeName name="EmployeeName" type="text" [(ngModel)]="Name" />
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>
+          Employee ID:
+          <input type="text" name="EmployeeId" [(ngModel)]="Id" />
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>
+          Contact No:
+          <input type="text" name="EmployeeContact" [(ngModel)]="Contact" />
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>
+          Designation:
+          <input type="text" name="EmployeeDesignation" [(ngModel)]="Designation" />
+        </label>
+      </td>
+    </tr>
+  </table>
+<div class="row">
+  <div class="col-md-6"><button type="button" (click)="onClicked(EmployeeName.value)">Submit</button></div>
+  <div class="col-md-6"><button type="button" name="cancel">Cancel</button></div>
+</div>
+</form>
+<br/>
