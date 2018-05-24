@@ -1,0 +1,17 @@
+<div class="row">
+    <h3>{{Heading}}</h3>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <ul class="employees">
+            <li *ngFor="let employee of EmployeeList" (click)="onSelect(employee)" [class.selected]="employee === SelectedEmployee">
+                <div class="module hero">
+                    <span class="badge">{{employee.id}}</span> {{employee.name}} &nbsp; &nbsp; {{employee.contact}} &nbsp; &nbsp; {{employee.designation}}
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <app-employee-detail [employee]="SelectedEmployee"></app-employee-detail>
+    </div>
+</div>

@@ -3,13 +3,27 @@
   <h1>
     {{title}}
   </h1>
-    <ul>
-      <li *ngFor="let menuItem of menuStrip.Items">
-        <a href="\">{{menuItem}}</a>
-      </li>
-    </ul>
-
-  <div>
-    <app-employees></app-employees>
+  <ul>
+    <li *ngFor="let menuItem of menuStrip.Items | values">
+      <a routerLink="/{{menuItem}}">{{menuItem}}</a>
+    </li>
+  </ul>
+</div>
+<div class="container">
+  
+  <div class="row">
+    <!-- <div class="col-md-6">
+      <app-employees></app-employees>
+    </div> -->
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
   </div>
+  <div class="footer footer-nav modal-footer" style="box-sizing: unset; justify-content: unset">
+      <nav>
+        <a routerLink="/dashboard">Dashboard</a>
+        <a routerLink="/employees">Employees</a>
+        <a routerLink="/">Products</a>
+      </nav>
+    </div>
 </div>

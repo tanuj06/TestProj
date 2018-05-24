@@ -1,0 +1,35 @@
+<div *ngIf="employee">
+    <b>{{employee.name | uppercase}}'s DETAILS</b>
+    <br/>
+    <br/>
+    <div class="row" style="padding: 5px;">
+        <div class="col-md-6">
+            <label> Employee ID:</label>
+        </div>
+        <div class="col-md-6">{{employee.id}}</div>
+    </div>
+    <div class="row" style="padding: 5px;">
+        <div class="col-md-6">
+            <label> Employee Name:</label>
+        </div>
+        <div class="col-md-6">
+            <input [(ngModel)]="employee.name" placeholder="name">
+        </div>
+    </div>
+    <div class="row" style="padding: 5px;">
+        <div class="col-md-6">
+            <label> Contact No:</label>
+        </div>
+        <div class="col-md-6">
+            <input [(ngModel)]="employee.contact" placeholder="contact">
+        </div>
+    </div>
+    <div class="row" style="padding: 5px;">
+        <div class="col-md-6">
+            <label> Designation:</label>
+        </div>
+        <div class="col-md-6">
+            <input [(ngModel)]="employee.designation" placeholder="designation">
+        </div>
+    </div>
+</div>

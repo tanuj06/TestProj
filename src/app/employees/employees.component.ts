@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
-import { MailService } from '../Services/MailService/mail.service';
+import { Component, OnInit, Inject, Input, Output, EventEmitter } from '@angular/core';
+import { Employee } from './employee/employee';
 
 @Component({
   selector: 'app-employees',
@@ -8,15 +8,10 @@ import { MailService } from '../Services/MailService/mail.service';
 })
 export class EmployeesComponent implements OnInit {
 
-  @Input() Name : string;
-  @Input() Id : number;
-  @Input() Contact : number;
-  @Input() Designation : string;
-  onClicked( value)
-  {
-    Response.redirect("./employees/employee/employee-dashboard/employee-dashboard.component.html");
+
+  @Output() Update = new EventEmitter();
+  constructor(@Inject("MessageService") public messageService) {
   }
-  constructor(@Inject('Verify') private verify, private mail: MailService ) { }
 
   ngOnInit() {
   }
