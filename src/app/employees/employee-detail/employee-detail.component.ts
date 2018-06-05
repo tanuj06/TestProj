@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Employee } from '../employee/employee';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-employee-detail',
@@ -9,9 +11,21 @@ import { Employee } from '../employee/employee';
 export class EmployeeDetailComponent implements OnInit {
 
   @Input() employee : Employee;
-  constructor() { }
+  GetEmployee(): void
+  {
+    const id  = this.route.snapshot.paramMap.get('id');
+    this.employeeData.GetEmployee(id).subscribe(emp => this.employee = emp); 
+  }
+
+  save(emp : Employee): void{
+    this.employeeData.UpdateEmployee(emp).subscribe();
+  }
+
+  
+  constructor(@Inject('EmployeeData') private employeeData, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
+    this.GetEmployee();
   }
 
 }

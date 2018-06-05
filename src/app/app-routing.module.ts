@@ -6,11 +6,13 @@ import { AboutUsComponent } from './MenuItems/about-us/about-us.component';
 import { ContactDetailsComponent } from './MenuItems/contact-details/contact-details.component';
 import { ProductsComponent } from './products/products.component';
 import { CareersComponent } from './MenuItems/careers/careers.component';
+import { EmployeeDetailComponent } from './employees/employee-detail/employee-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'Home', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'employees', component: EmployeeDashboardComponent },
+  { path: 'detail/:id',component:EmployeeDetailComponent},
   { path:'dashboard', component: DashboardComponent },
   { path: 'About Us', component: AboutUsComponent },
   { path: 'Contact Us', component: ContactDetailsComponent },

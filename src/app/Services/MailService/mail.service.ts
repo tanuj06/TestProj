@@ -7,6 +7,7 @@ export class MailService {
 
   add(message: string){
     this.messages.push(message);
+    console.log(message);
   }
 
   clear(){ this.messages = []; }

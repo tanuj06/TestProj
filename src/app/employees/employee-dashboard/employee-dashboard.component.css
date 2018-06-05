@@ -27,6 +27,14 @@
     background-color: #DDD;
     left: .1em;
   }
+
+  .employees a {
+    color: #888;
+    text-decoration: none;
+    position: relative;
+    width: 250px;
+  }
+
   .employees .text {
     position: relative;
     top: -5px;

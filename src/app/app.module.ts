@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-
+import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { ProductsComponent } from './products/products.component';
@@ -17,6 +16,8 @@ import { AboutUsComponent } from './MenuItems/about-us/about-us.component';
 import { ContactDetailsComponent } from './MenuItems/contact-details/contact-details.component';
 import { CareersComponent } from './MenuItems/careers/careers.component';
 import { ValuePipe } from '../pipes/ValuePipe';
+import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './mock-records/in-memory-data.service';
 
 
 @NgModule({
@@ -35,7 +36,9 @@ import { ValuePipe } from '../pipes/ValuePipe';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService) 
   ],
   providers: [{provide:'MessageService', useClass: MailService}, {provide:'EmployeeData', useClass: EmployeeDataService}, {provide:'MenuStrip', useClass:MenuService}],
   bootstrap: [AppComponent]

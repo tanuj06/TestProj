@@ -13,11 +13,6 @@ export class EmployeeDashboardComponent implements OnInit {
   Heading:string = "Employees List";
   EmployeeList : Employee[];
 
-  SelectedEmployee: Employee;
-
-  onSelect(employee : Employee) : void {
-    this.SelectedEmployee = employee;
-  }
 
   getEmployees(): void {
     this.employeeData.GetEmployees()
