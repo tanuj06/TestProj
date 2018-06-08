@@ -19,4 +19,7 @@ export class DashboardComponent implements OnInit {
     this.employeeData.GetEmployees()
       .subscribe(employees => this.EmployeeList = employees.slice(1, 5));
   }
+
+
+  
 }
