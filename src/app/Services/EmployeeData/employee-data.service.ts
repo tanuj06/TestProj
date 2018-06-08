@@ -50,6 +50,15 @@ export class EmployeeDataService {
     );
   }
 
+   /** POST: add a new employee to the server */
+  AddEmployee(employee : Employee): Observable<Employee>{
+    this.messageService.add('EmployeeService: Added a new employee');
+    return this.http.post<Employee>(this.employeeurl, employee, { headers: new HttpHeaders( {'Content-Type': 'application/json' })}).pipe(
+      tap((employee: Employee) => this.log("added a new employee with id= " + `${employee.id}`)),
+      catchError(this.handleError<Employee>('AddEmployee'))
+    );
+  }
+
   private log(message: String): void{
     this.messageService.add(Date.now.toString() + ": EmployeeService : " + message)
   }

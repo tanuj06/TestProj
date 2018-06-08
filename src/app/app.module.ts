@@ -18,6 +18,7 @@ import { CareersComponent } from './MenuItems/careers/careers.component';
 import { ValuePipe } from '../pipes/ValuePipe';
 import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './mock-records/in-memory-data.service';
+import { AddEmployeeComponent } from './employees/add-employee/add-employee.component';
 
 
 @NgModule({
@@ -31,14 +32,15 @@ import { InMemoryDataService }  from './mock-records/in-memory-data.service';
     AboutUsComponent,
     ContactDetailsComponent,
     CareersComponent, 
-    ValuePipe
+    ValuePipe, AddEmployeeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService) 
+    InMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }
+    ) 
   ],
   providers: [{provide:'MessageService', useClass: MailService}, {provide:'EmployeeData', useClass: EmployeeDataService}, {provide:'MenuStrip', useClass:MenuService}],
   bootstrap: [AppComponent]

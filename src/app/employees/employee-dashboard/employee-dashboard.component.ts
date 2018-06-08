@@ -10,15 +10,25 @@ import { inject } from '@angular/core/testing';
 })
 export class EmployeeDashboardComponent implements OnInit {
 
-  Heading:string = "Employees List";
-  EmployeeList : Employee[];
+  toggleEmployee: string = "Add Employee";
+  Heading: string = "Employees List";
+  EmployeeList: Employee[];
+  ShowAddEmployeeDialog: boolean = false;
 
-
+  toggleAddEmployee(): void {
+    this.toggleEmployee = this.ShowAddEmployeeDialog == true ? "Add Employee" : "Close";
+    this.ShowAddEmployeeDialog = !this.ShowAddEmployeeDialog;
+  }
   getEmployees(): void {
     this.employeeData.GetEmployees()
-        .subscribe(employees => this.EmployeeList = employees);
+      .subscribe(employees => this.EmployeeList = employees);
   }
-  constructor(@Inject('EmployeeData') private employeeData ) { }
+
+  OnAddEmployee(employee: Employee): void {
+    this.EmployeeList.push(employee);
+  }
+
+  constructor(@Inject('EmployeeData') private employeeData) { }
 
   ngOnInit() {
     this.getEmployees();

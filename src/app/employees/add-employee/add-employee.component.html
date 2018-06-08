@@ -1,19 +1,13 @@
-<div *ngIf="employee">
-    <b>{{employee.name | uppercase}}'s DETAILS</b>
+<div *ngIf="showdialog">
+    <b>EMPLOYEE DETAILS</b>
     <br/>
     <br/>
-    <div class="row" style="padding: 5px;">
-        <div class="col-md-6">
-            <label> Employee ID:</label>
-        </div>
-        <div class="col-md-6">{{employee.id}}</div>
-    </div>
     <div class="row" style="padding: 5px;">
         <div class="col-md-6">
             <label> Employee Name:</label>
         </div>
         <div class="col-md-6">
-            <input [(ngModel)]="employee.name" placeholder="name">
+            <input [(ngModel)]="employee.name" placeholder=" enter name ">
         </div>
     </div>
     <div class="row" style="padding: 5px;">
@@ -21,7 +15,7 @@
             <label> Contact No:</label>
         </div>
         <div class="col-md-6">
-            <input [(ngModel)]="employee.contact" placeholder="contact">
+            <input [(ngModel)]="employee.contact" placeholder=" enter contact ">
         </div>
     </div>
     <div class="row" style="padding: 5px;">
@@ -29,13 +23,13 @@
             <label> Designation:</label>
         </div>
         <div class="col-md-6">
-            <input [(ngModel)]="employee.designation" placeholder="designation">
+            <input [(ngModel)]="employee.designation" placeholder=" enter designation ">
         </div>
     </div>
     <br/>
     <div class="row" style="padding: 5px;">
         <div class="">
-            <button (click) = "save(employee)">Update</button>
+            <button (click) = "addemployee(employee); employee.name = ''; employee.contact =''; employee.designation=''">Save</button>
         </div>
     </div>
 </div>
