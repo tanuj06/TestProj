@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
-import { ProductsComponent } from './products/products.component';
 import { MailService } from './Services/MailService/mail.service';
 import { EmployeeDataService } from './Services/EmployeeData/employee-data.service';
 import { MenuService } from './Services/MenuService/menu.service';
@@ -25,7 +24,6 @@ import { AddEmployeeComponent } from './employees/add-employee/add-employee.comp
   declarations: [
     AppComponent,
     EmployeesComponent,
-    ProductsComponent,
     EmployeeDashboardComponent,
     EmployeeDetailComponent,
     DashboardComponent,

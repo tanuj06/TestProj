@@ -4,7 +4,6 @@
   "description": "test project",
   "main": "main.ts",
   "dependencies": {
-    "@angular-devkit/build-angular": "^0.6.7",
     "@angular/animations": "*",
     "@angular/common": "*",
     "@angular/compiler": "*",
@@ -17,11 +16,14 @@
     "angular-in-memory-web-api": "^0.6.0",
     "bootstrap": "^4.1.0",
     "core-js": "^2.4.1",
+    "jquery": "^3.3.1",
+    "popper": "^1.0.1",
     "rxjs": "*",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/cli": "^6.0.7",
+    "@angular-devkit/build-angular": "^0.6.8",
+    "@angular/cli": "^6.2.5",
     "@angular/compiler-cli": "*",
     "@angular/language-service": "*",
     "@types/jasmine": "~2.8.3",

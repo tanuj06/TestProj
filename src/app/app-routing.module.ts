@@ -4,7 +4,6 @@ import { EmployeeDashboardComponent } from './employees/employee-dashboard/emplo
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutUsComponent } from './MenuItems/about-us/about-us.component';
 import { ContactDetailsComponent } from './MenuItems/contact-details/contact-details.component';
-import { ProductsComponent } from './products/products.component';
 import { CareersComponent } from './MenuItems/careers/careers.component';
 import { EmployeeDetailComponent } from './employees/employee-detail/employee-detail.component';
 
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path:'dashboard', component: DashboardComponent },
   { path: 'About Us', component: AboutUsComponent },
   { path: 'Contact Us', component: ContactDetailsComponent },
-  { path: 'Products', component: ProductsComponent },
   { path: 'Careers', component: CareersComponent },
 ];
 
